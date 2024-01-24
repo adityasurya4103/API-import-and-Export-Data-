@@ -1,0 +1,35 @@
+<!-- <div class="container" *ngIf="flag">
+
+    <input (change)="selectFile($event)" type="file"/>
+    <button (click)="uploadFile()" class="btn btn-primary mat-rasied-button">upload </button>
+</div>
+
+<div class="container" *ngIf="!flag">
+    <h1>Please Wait....</h1>
+    <h1>File is being Uploaded...</h1>
+</div>
+ -->
+
+<div class="container">
+    <br><br><br><br>
+
+    <label for="images" class="drop-container" id="dropcontainer">
+        <div *ngIf="flag">
+            <span class="drop-title">Drop files here</span>
+            or
+            <div>
+                <input type="file" id="files" (change)="selectFile($event)" accept=".xlsx, .xls" required>
+                <!-- $event: It's a special variable in Angular templates that represents the event object emitted by the DOM event. -->
+                <button (click)="uploadFile()" class="btn btn-dark mat-rasied-button">upload </button>
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; justify-content: center;" *ngIf="!flag">
+            <h1>Please Wait....</h1>
+            <h1>File is being Uploaded...</h1>
+        </div>
+    </label>
+
+
+
+</div>

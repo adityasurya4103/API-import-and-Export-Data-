@@ -1,0 +1,34 @@
+<br><br><br>
+
+
+<div class="container" *ngIf="user && user.length > 0">
+    <table style="margin-bottom: 50px;" class="table table-striped border-dark">
+
+        <thead class="table-dark">
+            <tr>
+                <th>Contact No</th>
+                <th>User Name</th>
+                <th>Account No</th>
+                <th>Account Type</th>
+                <th>Debit Card No</th>
+                <th>Expiry Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let u of user">
+
+                <td>{{u.contactNo}}</td>
+                <td>{{u.userName}}</td>
+                <td>{{u.accountNo}}</td>
+                <td>{{u.accountType}}</td>
+                <td>{{u.debitCardNo}}</td>
+                <td>{{u.expiryDate}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+<div class="container" *ngIf="!user || user.length === 0">
+    <p>No data available</p>
+</div>
