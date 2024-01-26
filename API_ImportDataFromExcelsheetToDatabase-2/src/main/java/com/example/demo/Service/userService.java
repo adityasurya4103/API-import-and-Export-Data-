@@ -1,7 +1,9 @@
 package com.example.demo.Service;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,5 +38,11 @@ public class userService {
 	
 	public List<user> getAllUSers (){
 		return this.userRepository.findAll();
+	}
+	
+	public ByteArrayInputStream getData() throws IOException {
+		List<user> all = userRepository.findAll();
+		ByteArrayInputStream byteArrayInputStream = userHelper.dataToExcel(all);
+		return byteArrayInputStream;
 	}
 }

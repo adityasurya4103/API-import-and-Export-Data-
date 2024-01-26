@@ -32,3 +32,22 @@
 <div class="container" *ngIf="!user || user.length === 0">
     <p>No data available</p>
 </div>
+
+
+<div class="container" >
+    <!-- style="display: flex; justify-content: center;"  > --> 
+    
+    <a (click)="download() " class="face-button" >
+
+        <div class="face-primary">
+          <span class="icon fa fa-cloud"></span>
+          Download the Database
+        </div>
+        
+        <div class="face-secondary">
+          <span class="icon fa fa-hdd-o"></span>
+           excel Sheet 
+        </div>
+      
+      </a>
+</div>

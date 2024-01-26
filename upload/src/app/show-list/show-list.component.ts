@@ -2,6 +2,8 @@ import { Component, NgZone } from '@angular/core';
 import { Users } from '../users';
 import { UserServiceService } from '../user-service.service';
 import { Router } from '@angular/router';
+import { HttpEventType, HttpResponse } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 
 
 @Component({
@@ -49,9 +51,26 @@ export class ShowListComponent {
     });
   }
 
+  download(): void {
+    this.userService.getDownload().subscribe(data => {
+      
+    },
+    error => {
+      console.error('Error in dowloading', error);
+    });
+  }
 
-
-
+    // download(){
+    //   this.userService.getDownload().subscribe(
+    //     data => {
+    //       console.log('Data received:', data);
+          
+    //     },
+    //     error => {
+    //       console.error('Error fetching user data:', error);
+    //     }
+    //   );
+    // }
 
 
 }
